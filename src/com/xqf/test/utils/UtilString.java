@@ -69,10 +69,19 @@ public class UtilString {
      */
     public static boolean strIsHexNum(String str) {
         boolean result = true;
+        if (str.length() == 0) {
+            result = false;
+            return result;
+        }
+        if (str.length() == 1 && str.charAt(0) == '.') {
+            result = false;
+            return result;
+        }
         if (str.charAt(0) == '-') {
             str = str.substring(1);
         }
         char[] chars = str.toCharArray();
+
         for (int i = 0; i < chars.length; i++) {
             if ((chars[i] <= '0' && chars[i] >= '9') || (chars[i] <= 'A' && chars[i] >= 'F') || (chars[i] <= 'a' && chars[i] >= 'f')) {
                 result = false;

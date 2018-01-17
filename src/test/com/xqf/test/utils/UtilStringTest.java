@@ -15,26 +15,7 @@ import org.junit.Test;
 public class UtilStringTest {
 
 
-    //°×ºÐµÄ²âÊÔÓÃÀý
-    String testString1 = "";
-    String testString2 = "- ";
-    String testString3 = ".";
-    String testString4a = "11";
-    String testString4b = "11.11";
-    String testString5a = "1A";
-    String testString5b = "1a";
-    String testString5c = "a";
 
-    //ºÚºÐµÄ²âÊÔÓÃÀý
-    String testString6 = "2";
-    String testString7 = "22222222222222222";
-    String testString8 = "-2";
-    String testString9 = "-22222222222222222";
-    String testString10 = "0";
-    String testString11 = "2.0";
-    String testString12 = "0.2";
-    String testString13 = "-a";
-    String testString14 = "1a";
     /**
      * Method: bothAreDecNum(String str1, String str2)
      */
@@ -48,7 +29,26 @@ public class UtilStringTest {
      */
     @Test
     public void testStrIsDecNum() throws Exception {
+        //°×ºÐµÄ²âÊÔÓÃÀý
+        String testString1 = "";
+        String testString2 = "- ";
+        String testString3 = ".";
+        String testString4a = "11";
+        String testString4b = "11.11";
+        String testString5a = "1A";
+        String testString5b = "1a";
+        String testString5c = "a";
 
+        //ºÚºÐµÄ²âÊÔÓÃÀý
+        String testString6 = "2";
+        String testString7 = "22222222222222222";
+        String testString8 = "-2";
+        String testString9 = "-22222222222222222";
+        String testString10 = "0";
+        String testString11 = "2.0";
+        String testString12 = "0.2";
+        String testString13 = "-a";
+        String testString14 = "1a";
 
         Assert.assertSame(false, UtilString.strIsDecNum(testString1));
         Assert.assertSame(false, UtilString.strIsDecNum(testString2));
@@ -85,6 +85,16 @@ public class UtilStringTest {
      */
     @Test
     public void testStrIsHexNum() throws Exception {
+
+        String testString35="1234acd";
+        String testString36="1234";
+        String testString37="1234acdef";
+        String testString38="1234acdefg";
+
+        Assert.assertSame(true,UtilString.strIsHexNum(testString35));
+        Assert.assertSame(true,UtilString.strIsHexNum(testString36));
+        Assert.assertSame(true,UtilString.strIsHexNum(testString37));
+        Assert.assertSame(false,UtilString.strIsHexNum(testString38));
 
         //TODO: Test goes here... 
     }
